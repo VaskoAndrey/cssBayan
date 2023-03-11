@@ -1,0 +1,32 @@
+.wrapper {
+    width: 80vh;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .accordion-title {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #eee;
+    font-weight: bold;
+  }
+  
+  .accordion-title:hover {
+    background-color: #ddd;
+  }
+  
+  .accordion-content {
+    display: none;
+    padding: 10px;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  input[type="checkbox"]:checked ~ .accordion-content {
+    display: block;
+  }
