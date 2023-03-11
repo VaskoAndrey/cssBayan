@@ -26,7 +26,6 @@
     background-color: #eee;
     font-weight: bold;
     font-size: 1.2em;
-    /* border-bottom: 1px solid grey; */
     transition: background-color 0.3s ease-in-out;
   }
   
@@ -45,9 +44,11 @@
     display: none;
   }
   
-  input[type="checkbox"]:checked + .accordion-title + .accordion-content {
-    height: 20em;
+  input[type="checkbox"]:checked + .accordion-title + .accordion-content {   /*Открываем по клику*/
     padding: 0.7em;
+    height: 20em;
+    transition: padding 0.1s ease-in-out;
+    transition: height 0.5s ease-in-out;
   }
 
   input[type="checkbox"]:checked + .accordion-title .accordion-icon__img {
@@ -60,14 +61,56 @@
     transform: rotate(0deg);
   }
 
+  .accordion input[type="checkbox"]:checked ~ .accordion-title {
+    color: black;
+  }
+  
+  input[type="checkbox"]:not(:checked) ~ .accordion-title {
+    color: blue;
+  }
+
   .accordion-img {
     width: 30em;
     height: 100%;
   }
 
 .accordion-icon__img {
-    text-align: end;
-    width: 0.8em;
+  display: none;
+  text-align: end;
+  width: 0.7em;
 }
 
+.accordion:hover .accordion-icon__img {
+  display: block;
+}
 
+.accordion:hover input[type="checkbox"]:not(:checked) + .accordion-title {
+  color: black; /* замените на нужный вам цвет */
+}
+
+@media (min-width: 789px) and (max-width: 1888px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 60%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine)  {
+  .accordion-title:hover + .accordion-content  {  /*При наведении открываем*/
+    padding: 0.7em;
+    height: 20em;
+    transition: padding 0.1s ease-in-out;
+    transition: height 0.5s ease-in-out;
+  }
+}
