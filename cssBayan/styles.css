@@ -22,10 +22,8 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    padding: 0.7em;
     background-color: #eee;
     font-weight: bold;
-    font-size: 1.2em;
     transition: background-color 0.3s ease-in-out;
   }
   
@@ -90,56 +88,50 @@
 }
 
 @media (min-width: 1181px) and (max-width: 1920px) {
-  h1 {
-    font-size: 2rem;
-  }
 
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .container {
-    width: 60%;
-  }
+.wrapper {
+  width: 70vw;
+}
+.accordion-title {
+  font-size: 1.2em;
+  padding: 0.7em;
+}
 }
 
 @media (min-width: 820px) and (max-width: 1180px) {
-  h1 {
-    font-size: 2rem;
+  .wrapper {
+    width: 65vw;
+  }
+  .accordion-title {
+    font-size: 1em;
+    padding: 0.6em;
   }
 
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .container {
-    width: 60%;
+  .accordion-img {
+    width: 25em;
+    height: 100%;
   }
 }
 
 @media (min-width: 319px) and (max-width: 819px) {
-  h1 {
-    font-size: 2rem;
+  .wrapper {
+    margin: 0 2em;
+  }
+  .accordion-title {
+    font-size: 0.9em;
+    padding: 0.6em;
   }
 
-  h2 {
-    font-size: 1.5rem;
+  .accordion-img {
+    width: 12em;
+    height: 100%;
   }
 
-  p {
-    font-size: 1rem;
-  }
-
-  .container {
-    width: 60%;
+  input[type="radio"]:checked + .accordion-title + .accordion-content {   /*Открываем по клику*/
+    padding: 0.5em;
+    height: 15em;
+    transition: padding 0.1s ease-in-out;
+    transition: height 0.5s ease-in-out;
   }
 }
 
