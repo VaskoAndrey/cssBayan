@@ -20,11 +20,25 @@
   
   .accordion-title {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
     background-color: #eee;
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
+  }
+
+  .accordion-wr {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #eee;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .accordion-wr p {
+    border-bottom: 1px solid black;
   }
   
   .accordion-title:hover {
@@ -42,7 +56,7 @@
     display: none;
   }
   
-  input[type="radio"]:checked + .accordion-title + .accordion-content {   /*Открываем по клику*/
+  input[type="radio"]:checked + .accordion-title  .accordion-content {   /*Открываем по клику*/
     padding: 0.7em;
     height: 20em;
     transition: padding 0.1s ease-in-out;
@@ -98,7 +112,7 @@
 }
 }
 
-@media (min-width: 820px) and (max-width: 1180px) {
+@media (min-width: 686px) and (max-width: 1180px) {
   .wrapper {
     width: 65vw;
   }
@@ -113,7 +127,7 @@
   }
 }
 
-@media (min-width: 319px) and (max-width: 819px) {
+@media (min-width: 319px) and (max-width: 685px) {
   .wrapper {
     margin: 0 2em;
   }
@@ -123,7 +137,7 @@
   }
 
   .accordion-img {
-    width: 12em;
+    width: 16em;
     height: 100%;
   }
 
@@ -136,7 +150,7 @@
 }
 
 @media (hover: hover) and (pointer: fine)  {
-  .accordion-title:hover + .accordion-content  {  /*При наведении открываем*/
+  .accordion-title:hover  .accordion-content  {  /*При наведении открываем*/
     padding: 0.7em;
     height: 20em;
     transition: padding 0.1s ease-in-out;
