@@ -1,0 +1,159 @@
+.body {
+    font-size: 16px;
+    background-color: honeydew;
+}
+
+.wrapper {
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+}
+
+.main-title {
+    text-align: center;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .accordion-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #eee;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .accordion-wr {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #eee;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .accordion-wr p {
+    border-bottom: 1px solid black;
+  }
+  
+  .accordion-title:hover {
+    background-color: #ddd;
+  }
+  
+  .accordion-content {
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: height 0.5s ease-in-out;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  input[type="radio"]:checked + .accordion-title  .accordion-content {   /*Открываем по клику*/
+    padding: 0.7em;
+    height: 20em;
+    transition: padding 0.1s ease-in-out;
+    transition: height 0.5s ease-in-out;
+  }
+
+  input[type="radio"]:checked + .accordion-title .accordion-icon__img {
+    transition: 0.5s;
+    transform: rotate(45deg);
+  }
+  
+  input[type="radio"]:not(:checked) + .accordion-title .accordion-icon__img {
+    transition: 0.5s;
+    transform: rotate(0deg);
+  }
+
+  
+  .accordion input[type="radio"]:not(:checked) ~ .accordion-title {
+    color: blue;
+  }
+  
+  .accordion input[type="radio"]:checked + .accordion-title {
+    color: black;
+  }
+
+  .accordion-img {
+    width: 30em;
+    height: 100%;
+  }
+
+.accordion-icon__img {
+  display: none;
+  text-align: end;
+  width: 0.7em;
+}
+
+.accordion:hover .accordion-icon__img {
+  display: block;
+}
+
+.accordion:hover input[type="radio"] + .accordion-title {
+  color: black; 
+}
+
+@media (min-width: 1181px) and (max-width: 1920px) {
+
+.wrapper {
+  width: 70vw;
+}
+.accordion-title {
+  font-size: 1.2em;
+  padding: 0.7em;
+}
+}
+
+@media (min-width: 686px) and (max-width: 1180px) {
+  .wrapper {
+    width: 65vw;
+  }
+  .accordion-title {
+    font-size: 1em;
+    padding: 0.6em;
+  }
+
+  .accordion-img {
+    width: 25em;
+    height: 100%;
+  }
+}
+
+@media (min-width: 319px) and (max-width: 685px) {
+  .wrapper {
+    margin: 0 2em;
+  }
+  .accordion-title {
+    font-size: 0.9em;
+    padding: 0.6em;
+  }
+
+  .accordion-img {
+    width: 16em;
+    height: 100%;
+  }
+
+  input[type="radio"]:checked + .accordion-title + .accordion-content {   /*Открываем по клику*/
+    padding: 0.5em;
+    height: 15em;
+    transition: padding 0.1s ease-in-out;
+    transition: height 0.5s ease-in-out;
+  }
+}
+
+@media (hover: hover) and (pointer: fine)  {
+  .accordion-title:hover  .accordion-content  {  /*При наведении открываем*/
+    padding: 0.7em;
+    height: 20em;
+    transition: padding 0.1s ease-in-out;
+    transition: height 0.5s ease-in-out;
+  }
+}
