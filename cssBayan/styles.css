@@ -40,33 +40,34 @@
     transition: height 0.5s ease-in-out;
   }
   
-  input[type="checkbox"] {
+  input[type="radio"] {
     display: none;
   }
   
-  input[type="checkbox"]:checked + .accordion-title + .accordion-content {   /*Открываем по клику*/
+  input[type="radio"]:checked + .accordion-title + .accordion-content {   /*Открываем по клику*/
     padding: 0.7em;
     height: 20em;
     transition: padding 0.1s ease-in-out;
     transition: height 0.5s ease-in-out;
   }
 
-  input[type="checkbox"]:checked + .accordion-title .accordion-icon__img {
+  input[type="radio"]:checked + .accordion-title .accordion-icon__img {
     transition: 0.5s;
     transform: rotate(45deg);
   }
   
-  input[type="checkbox"]:not(:checked) + .accordion-title .accordion-icon__img {
+  input[type="radio"]:not(:checked) + .accordion-title .accordion-icon__img {
     transition: 0.5s;
     transform: rotate(0deg);
   }
 
-  .accordion input[type="checkbox"]:checked ~ .accordion-title {
-    color: black;
+  
+  .accordion input[type="radio"]:not(:checked) ~ .accordion-title {
+    color: blue;
   }
   
-  input[type="checkbox"]:not(:checked) ~ .accordion-title {
-    color: blue;
+  .accordion input[type="radio"]:checked + .accordion-title {
+    color: black;
   }
 
   .accordion-img {
@@ -84,11 +85,47 @@
   display: block;
 }
 
-.accordion:hover input[type="checkbox"]:not(:checked) + .accordion-title {
-  color: black; /* замените на нужный вам цвет */
+.accordion:hover input[type="radio"] + .accordion-title {
+  color: black; 
 }
 
-@media (min-width: 789px) and (max-width: 1888px) {
+@media (min-width: 1181px) and (max-width: 1920px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1180px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 319px) and (max-width: 819px) {
   h1 {
     font-size: 2rem;
   }
